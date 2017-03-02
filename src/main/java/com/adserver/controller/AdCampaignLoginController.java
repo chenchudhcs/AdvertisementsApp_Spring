@@ -31,6 +31,10 @@ public class AdCampaignLoginController {
 
 	@Autowired
 	UserValidator user;
+	@RequestMapping(value="/", method = RequestMethod.GET )
+	public String index(){
+	    return "index";
+	}   
 	
 	@RequestMapping(value="/signin",method=RequestMethod.POST)
 	public ResponseEntity login(HttpServletRequest request,

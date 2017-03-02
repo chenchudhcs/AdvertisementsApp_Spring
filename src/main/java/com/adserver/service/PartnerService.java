@@ -1,5 +1,7 @@
 package com.adserver.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,14 @@ public class PartnerService {
 		Partner partner=partnerDao.findPartnerByEmailIdAndPassword(userName, password);
 		
 		return partner;
+	}
+	
+	public List<Partner> getPartnersList()
+	{
+		
+		
+		return partnerDao.findAll();
+		
 	}
 
 }

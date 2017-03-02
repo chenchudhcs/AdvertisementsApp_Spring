@@ -9,8 +9,9 @@ import org.springframework.stereotype.Repository;
 import com.adserver.entity.AdCampaign;
 
 @Repository
-public interface AdCampaignDao extends JpaRepository<AdCampaign,String> {
+public interface AdCampaignDao extends JpaRepository<AdCampaign, String> {
 
 	public List<AdCampaign> findAdCampaignByPartnerId(String partnerId);
+
 
 }

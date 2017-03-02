@@ -19,7 +19,7 @@ public class Partner {
 	private String partnerId ;
 	
 	@Column(name="name")
-	private String pname ;
+	private String partnerName ;
 	
 	@Column(name="emailid")
 	private String emailId ;
@@ -36,11 +36,11 @@ public class Partner {
 	}
 
 	public String getPname() {
-		return pname;
+		return partnerName;
 	}
 
 	public void setPname(String pname) {
-		this.pname = pname;
+		this.partnerName = pname;
 	}
 
 	public String getEmailId() {

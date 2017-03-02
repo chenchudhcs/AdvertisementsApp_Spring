@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<beans:property name="prefix" value="/static/" />
+<beans:property name="suffix" value=".html" />
+</beans:bean>

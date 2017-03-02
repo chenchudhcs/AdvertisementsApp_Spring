@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.adserver.entity.AdCampaign;
 import com.adserver.metadata.ResponseObject;
 import com.adserver.service.AdCampaignService;
+import com.adserver.service.PartnerService;
 
 
 @RestController
@@ -24,6 +25,10 @@ public class AdCampaignController {
 	
 	@Autowired
 	AdCampaignService adCampaignService;
+
+	@Autowired
+	PartnerService partnerService;
+	
 
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public ResponseEntity<ResponseObject> saveAdCampaign(@RequestBody AdCampaign adCampaign) {
@@ -61,7 +66,7 @@ public class AdCampaignController {
 
 	}
 	
-	@RequestMapping(value = "/fetchall", method = RequestMethod.GET)
+	@RequestMapping(value = "/fetchads", method = RequestMethod.GET)
 	public ResponseEntity<ResponseObject> getAllAdCampaigns() {
 		ResponseObject responseObject = new ResponseObject();
 			if (adCampaignService.getAdCampaign().isEmpty()==true) {
@@ -70,6 +75,7 @@ public class AdCampaignController {
 
 			} else {
 				responseObject.setDatares(adCampaignService.getAdCampaign());
+				System.out.println("responseeeeeeeeeeeeeeeeeee"+responseObject.getDatares());
 				logger.debug("/fetchbyid,reponse: " + responseObject);
 
 			}
@@ -78,5 +84,27 @@ public class AdCampaignController {
 
 
 	}
+	
+	
+
+	@RequestMapping(value = "/fetchpartners", method = RequestMethod.GET)
+	public ResponseEntity<ResponseObject> getPartners() {
+		ResponseObject responseObject = new ResponseObject();
+			if (adCampaignService.getAdCampaign().isEmpty()==true) {
+				responseObject.setErrorres("No Data Found in table");
+				logger.error("/fetchbyid, No Data Found ");
+
+			} else {
+				responseObject.setDatares(partnerService.getPartnersList());
+				System.out.println("responseeeeeeeeeeeeeeeeeee"+responseObject.getDatares());
+				logger.debug("/fetchbyid,reponse: " + responseObject);
+
+			}
+
+			return new ResponseEntity<ResponseObject>(responseObject, HttpStatus.OK);
+
+
+	}
+	
 	
 }
