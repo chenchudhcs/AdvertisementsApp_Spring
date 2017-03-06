@@ -4,6 +4,7 @@ spring:
   devtools:
     livereload:
       enabled: true
+  
   datasource:
     url:  jdbc:mysql://localhost:3306/adcampaign?useSSL=true
     username : root

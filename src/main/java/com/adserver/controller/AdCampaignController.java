@@ -28,7 +28,6 @@ public class AdCampaignController {
 
 	@Autowired
 	PartnerService partnerService;
-	
 
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public ResponseEntity<ResponseObject> saveAdCampaign(@RequestBody AdCampaign adCampaign) {
@@ -43,7 +42,7 @@ public class AdCampaignController {
 			responseObject.setSuccessres("data saved successfully");
 		}
 		logger.debug(" /create, response: " + responseObject);
-
+		
 		return new ResponseEntity<ResponseObject>(responseObject, HttpStatus.ACCEPTED);
 	}
 	

@@ -15,3 +15,4 @@ public interface AdCampaignDao extends JpaRepository<AdCampaign, String> {
 
 
 }
+

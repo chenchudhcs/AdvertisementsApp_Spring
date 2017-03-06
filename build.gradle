@@ -34,7 +34,7 @@ eclipse {
 }
 
 war {
-	baseName = '/adcampaign'
+	baseName = '/ad'
 	
 }
 sourceCompatibility = 1.8
@@ -50,6 +50,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-jdbc')	
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
+		 compile("org.springframework.boot:spring-boot-devtools")
 	runtime('mysql:mysql-connector-java')
 	
 	
