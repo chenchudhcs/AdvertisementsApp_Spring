@@ -34,7 +34,7 @@ eclipse {
 }
 
 war {
-	baseName = '/ad'
+	baseName = '/'
 	
 }
 sourceCompatibility = 1.8
@@ -63,6 +63,9 @@ compile group: 'org.springframework.boot', name: 'spring-boot-starter-test', ver
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '1.3.3.RELEASE'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	compile("com.h2database:h2")
+	// https://mvnrepository.com/artifact/com.github.jsimone/webapp-runner
+compile group: 'com.github.jsimone', name: 'webapp-runner', version: '7.0.22'
+	
 
 
 }
