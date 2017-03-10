@@ -6,13 +6,11 @@ spring:
       enabled: true
   
   datasource:
-    url:  jdbc:mysql://advertisementappdb.cm1zsngdjcma.us-west-1.rds.amazonaws.com:3306/adcampaign
+    url:   jdbc:mysql://advertisementappdb.cm1zsngdjcma.us-west-1.rds.amazonaws.com:3306/adcampaign
     username : sravani
     password : mahadev12
    
-    
-    
-    
+        
 
   jpa:
     database: MYSQL

@@ -6,6 +6,8 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +22,8 @@ import com.adserver.metadata.ResponseObject;
 import com.adserver.metadata.UserValidator;
 import com.adserver.service.PartnerService;
 
+
+
 @RestController
 public class AdCampaignLoginController {
 
@@ -31,6 +35,9 @@ public class AdCampaignLoginController {
 
 	@Autowired
 	UserValidator user;
+	
+	private static final Logger logger = LoggerFactory.getLogger(AdCampaignLoginController.class);
+
 	 
 	@RequestMapping(value="/signin",method=RequestMethod.POST)
 	public ResponseEntity login(HttpServletRequest request,
@@ -39,7 +46,7 @@ public class AdCampaignLoginController {
 		boolean userExists;
 		String uuid=UUID.randomUUID().toString();
 		ResponseObject responseObject=new ResponseObject();
-		System.out.println("beforeeeeeeeeeee");
+         logger.info("beforeeeeeeeeeee");
 		String userName=json.get("emailId");
 		String password=json.get("password");
 		if(userName==null && password ==null)
@@ -75,7 +82,7 @@ public class AdCampaignLoginController {
 	public ResponseEntity<ResponseObject> signout(HttpServletRequest req)
 	{
 		ResponseObject response=new ResponseObject();
-		System.out.println(req.getHeader("token"));
+		logger.info(req.getHeader("token"));
 		String token=req.getHeader("token");
 		if(token==null)
 		{	

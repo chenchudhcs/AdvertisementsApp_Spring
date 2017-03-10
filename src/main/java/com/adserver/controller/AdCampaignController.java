@@ -49,7 +49,7 @@ public class AdCampaignController {
 	@RequestMapping(value = "/fetchbyid/{partnerId}", method = RequestMethod.GET)
 	public ResponseEntity<ResponseObject> getAdCampaignById(@PathVariable String partnerId) {
 		ResponseObject responseObject = new ResponseObject();
-		System.out.println("partner idddddddd"+partnerId);
+		logger.info("partner id"+partnerId);
 			if (adCampaignService.getAdCampaignById(partnerId).isEmpty()) {
 				responseObject.setErrorres("No Data Found in table");
 				logger.error("/fetchbyid, No Data Found ");
@@ -74,7 +74,7 @@ public class AdCampaignController {
 
 			} else {
 				responseObject.setDatares(adCampaignService.getAdCampaign());
-				System.out.println("responseeeeeeeeeeeeeeeeeee"+responseObject.getDatares());
+				logger.info("response"+responseObject.getDatares());
 				logger.debug("/fetchbyid,reponse: " + responseObject);
 
 			}
@@ -95,7 +95,7 @@ public class AdCampaignController {
 
 			} else {
 				responseObject.setDatares(partnerService.getPartnersList());
-				System.out.println("responseeeeeeeeeeeeeeeeeee"+responseObject.getDatares());
+				logger.info("response"+responseObject.getDatares());
 				logger.debug("/fetchbyid,reponse: " + responseObject);
 
 			}
